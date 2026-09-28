@@ -1,1 +1,783 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coisas de Alma | Ateliê de Buquês de Cetim & Arranjos Artesanais</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#fff1f2',
+                            100: '#ffe4e6',
+                            200: '#fecdd3',
+                            300: '#fda4af',
+                            400: '#fb7185',
+                            500: '#f43f5e',
+                            600: '#e11d48',
+                            700: '#be123c',
+                            800: '#9f1239',
+                            900: '#881337',
+                            gold: '#D4AF37',
+                            rose: '#E8B4B8'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Fonts Google & FontAwesome Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        .glass {
+            background: rgba(255, 255, 255, 0.65);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .dark .glass {
+            background: rgba(18, 18, 24, 0.7);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glow-effect {
+            box-shadow: 0 0 35px -5px rgba(225, 29, 72, 0.3);
+        }
+        .dark .glow-effect {
+            box-shadow: 0 0 35px -5px rgba(244, 63, 94, 0.25);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: rgba(225, 29, 72, 0.4);
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="bg-rose-50/40 dark:bg-[#0B0B0E] text-slate-800 dark:text-slate-100 font-sans transition-colors duration-300 min-h-screen custom-scrollbar selection:bg-brand-500 selection:text-white">
 
+    <header class="fixed top-0 left-0 right-0 z-50 px-4 py-3">
+        <nav class="max-w-6xl mx-auto glass rounded-2xl px-5 py-3 flex items-center justify-between shadow-lg transition-all duration-300">
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-brand-600 to-amber-300 flex items-center justify-center text-white shadow-md group-hover:scale-105 transition-transform">
+                    <i class="fa-solid fa-rose text-lg"></i>
+                </div>
+                <div>
+                    <span class="font-serif text-xl font-bold tracking-tight bg-gradient-to-r from-brand-700 via-brand-500 to-amber-600 dark:from-brand-300 dark:to-amber-300 bg-clip-text text-transparent">Coisas de Alma</span>
+                    <span class="block text-[10px] tracking-widest uppercase text-slate-500 dark:text-slate-400 font-medium">Ateliê Artesanal</span>
+                </div>
+            </a>
+
+            <!-- Navigation Links -->
+            <div class="hidden md:flex items-center gap-6 font-medium text-sm">
+                <a href="#catalogo" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Galeria</a>
+                <a href="#calculadora" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Monte o Seu</a>
+                <a href="#tabela" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Tabela de Preços</a>
+                <a href="#diferenciais" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Sobre</a>
+            </div>
+
+            <!-- Social Links & Action -->
+            <div class="flex items-center gap-2 sm:gap-3">
+                <button id="themeToggle" aria-label="Alternar Tema" class="w-9 h-9 rounded-xl flex items-center justify-center bg-slate-200/50 dark:bg-slate-800/80 hover:bg-slate-300/50 dark:hover:bg-slate-700 transition-colors text-slate-700 dark:text-slate-200">
+                    <i class="fa-solid fa-moon dark:hidden"></i>
+                    <i class="fa-solid fa-sun hidden dark:inline"></i>
+                </button>
+
+                <a href="https://www.instagram.com/coisasdealma.atelie?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-xl flex items-center justify-center bg-gradient-to-tr from-purple-600 via-pink-600 to-yellow-500 text-white shadow-sm hover:opacity-90 hover:scale-105 transition-all" title="Instagram @coisasdealma.atelie">
+                    <i class="fa-brands fa-instagram text-lg"></i>
+                </a>
+
+                <a href="https://wa.me/554384344114" target="_blank" rel="noopener noreferrer" class="hidden sm:flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white px-4 py-2 rounded-xl text-sm font-semibold shadow-md shadow-emerald-600/20 hover:scale-105 transition-all">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span>Pedir Agora</span>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="pt-32 pb-16 px-4 relative overflow-hidden">
+        <!-- Decorative Glows -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-brand-500/15 dark:bg-brand-500/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute top-1/3 right-10 w-72 h-72 bg-amber-400/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-6xl mx-auto text-center relative z-10">
+            <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-100/80 dark:bg-brand-950/60 border border-brand-200 dark:border-brand-800/50 text-brand-700 dark:text-brand-300 text-xs font-semibold uppercase tracking-wider mb-6 shadow-sm">
+                <i class="fa-solid fa-sparkles text-amber-500"></i> Buquês Eternos de Cetim Premium
+            </span>
+
+            <h1 class="font-serif text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight mb-6 leading-tight">
+                Flores que duram para <br class="hidden sm:inline">
+                <span class="bg-gradient-to-r from-brand-600 via-pink-500 to-amber-500 dark:from-brand-400 dark:via-pink-400 dark:to-amber-300 bg-clip-text text-transparent">sempre na memória</span>
+            </h1>
+
+            <p class="max-w-2xl mx-auto text-slate-600 dark:text-slate-300 text-base sm:text-lg mb-8 leading-relaxed font-light">
+                Cada pétala é moldada artesanalmente com cetim de alta qualidade. Buquês e arranjos exclusivos criados para formaturas, aniversários, datas especiais e momentos inesquecíveis.
+            </p>
+
+            <div class="flex flex-wrap items-center justify-center gap-4">
+                <a href="#calculadora" class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-gradient-to-r from-brand-600 to-brand-500 hover:from-brand-500 hover:to-brand-400 text-white font-semibold shadow-lg shadow-brand-500/25 hover:shadow-brand-500/40 hover:-translate-y-0.5 transition-all flex items-center justify-center gap-3">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    <span>Monte seu Buquê Personalizado</span>
+                </a>
+                
+                <a href="https://wa.me/554384344114" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-8 py-4 rounded-2xl glass hover:bg-white/80 dark:hover:bg-slate-800/80 font-semibold border border-slate-200 dark:border-slate-800 transition-all flex items-center justify-center gap-3">
+                    <i class="fa-brands fa-whatsapp text-emerald-500 text-xl"></i>
+                    <span>WhatsApp: (43) 8434-4114</span>
+                </a>
+            </div>
+
+            <!-- Redes Sociais Bar Banner -->
+            <div class="mt-12 inline-flex items-center gap-4 px-6 py-3 rounded-2xl glass shadow-sm border border-slate-200/50 dark:border-slate-800">
+                <span class="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Acompanhe nosso trabalho:</span>
+                <a href="https://www.instagram.com/coisasdealma.atelie?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-sm font-semibold hover:text-brand-600 dark:hover:text-brand-400 transition-colors">
+                    <i class="fa-brands fa-instagram text-pink-500 text-lg"></i>
+                    <span>@coisasdealma.atelie</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="calculadora" class="py-16 px-4 relative">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-10">
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold mb-3">Monte Seu Buquê em Tempo Real</h2>
+                <p class="text-slate-600 dark:text-slate-400">Escolha a quantidade de rosas, cores e personalizações adicionais.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                
+                <!-- Opções de Configuração -->
+                <div class="lg:col-span-7 glass rounded-3xl p-6 sm:p-8 shadow-xl border border-white/40 dark:border-slate-800 space-y-6">
+                    
+                    <!-- Passo 1: Quantidade de Rosas -->
+                    <div>
+                        <label class="flex justify-between items-center text-sm font-bold uppercase tracking-wider mb-3">
+                            <span class="flex items-center gap-2 text-brand-600 dark:text-brand-400">
+                                <span class="w-6 h-6 rounded-full bg-brand-100 dark:bg-brand-900/60 flex items-center justify-center text-xs">1</span>
+                                Quantidade de Rosas:
+                            </span>
+                            <span id="roseCountDisplay" class="text-lg font-extrabold text-brand-600 dark:text-brand-400">12 Rosas</span>
+                        </label>
+
+                        <!-- Presets de Rosas da Tabela -->
+                        <div class="grid grid-cols-4 sm:grid-cols-4 gap-2 mb-4" id="presetButtons">
+                            <!-- Preenchido via Javascript -->
+                        </div>
+
+                        <!-- Slider para valores flexíveis -->
+                        <input type="range" id="roseRange" min="1" max="25" value="12" step="1" class="w-full h-2 bg-slate-200 dark:bg-slate-700 rounded-lg appearance-none cursor-pointer accent-brand-600">
+                        <div class="flex justify-between text-xs text-slate-400 mt-1 font-medium">
+                            <span>1 Rosa (R$ 15)</span>
+                            <span>12 Rosas (R$ 120)</span>
+                            <span>20 Rosas (R$ 195)</span>
+                        </div>
+                    </div>
+
+                    <hr class="border-slate-200/60 dark:border-slate-800">
+
+                    <!-- Passo 2: Cor do Cetim -->
+                    <div>
+                        <label class="block text-sm font-bold uppercase tracking-wider mb-3 text-brand-600 dark:text-brand-400">
+                            <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-brand-100 dark:bg-brand-900/60 text-xs mr-1">2</span>
+                            Cor Principal do Cetim:
+                        </label>
+                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5" id="colorOptions">
+                            <!-- JS vai popular -->
+                        </div>
+                    </div>
+
+                    <hr class="border-slate-200/60 dark:border-slate-800">
+
+                    <!-- Passo 3: Adicionais e Personalização -->
+                    <div>
+                        <label class="block text-sm font-bold uppercase tracking-wider mb-3 text-brand-600 dark:text-brand-400">
+                            <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-brand-100 dark:bg-brand-900/60 text-xs mr-1">3</span>
+                            Personalizações e Adicionais:
+                        </label>
+                        <div class="space-y-2.5" id="addonsContainer">
+                            <!-- Populado via JS -->
+                        </div>
+                    </div>
+
+                    <!-- Observação/Mensagem no Buquê -->
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase mb-2">Mensagem do Cartão ou Detalhe Especiais:</label>
+                        <input type="text" id="customNote" placeholder="Ex: Para minha mãe amada com fita de cetim dourada..." class="w-full px-4 py-3 rounded-xl bg-slate-100/80 dark:bg-slate-900/80 border border-slate-200 dark:border-slate-700 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500">
+                    </div>
+
+                </div>
+
+                <!-- Resumo do Pedido / Card Fixo -->
+                <div class="lg:col-span-5 lg:sticky lg:top-24">
+                    <div class="glass rounded-3xl p-6 sm:p-8 shadow-xl border border-brand-200/50 dark:border-brand-900/40 glow-effect relative overflow-hidden">
+                        
+                        <div class="flex items-center justify-between pb-4 mb-4 border-b border-slate-200/60 dark:border-slate-800">
+                            <h3 class="font-serif text-xl font-bold">Resumo do Pedido</h3>
+                            <span class="px-2.5 py-1 rounded-full bg-emerald-100 dark:bg-emerald-950/80 text-emerald-700 dark:text-emerald-400 text-xs font-bold flex items-center gap-1">
+                                <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span> Ateliê Pronto
+                            </span>
+                        </div>
+
+                        <div class="space-y-3 text-sm mb-6">
+                            <div class="flex justify-between items-center">
+                                <span class="text-slate-600 dark:text-slate-400" id="summaryRosesLabel">12 Rosas de Cetim</span>
+                                <span class="font-bold" id="summaryRosesPrice">R$ 120,00</span>
+                            </div>
+                            <div class="flex justify-between items-center text-xs text-slate-500">
+                                <span>Cor selecionada:</span>
+                                <span class="font-semibold text-slate-800 dark:text-slate-200" id="summaryColor">Vermelho Bordô</span>
+                            </div>
+                            
+                            <div id="summaryAddonsList" class="space-y-1 pt-2 border-t border-slate-100 dark:border-slate-800/80 text-xs">
+                                <!-- JS Adicionará os adicionais selecionados -->
+                            </div>
+                        </div>
+
+                        <div class="pt-4 border-t border-slate-200/60 dark:border-slate-800 mb-6">
+                            <div class="flex justify-between items-baseline">
+                                <span class="text-xs font-bold uppercase tracking-wider text-slate-500">Valor Estimado Total</span>
+                                <span class="text-3xl font-extrabold text-brand-600 dark:text-brand-400" id="totalPriceDisplay">R$ 120,00</span>
+                            </div>
+                            <p class="text-[11px] text-slate-400 mt-1">*Encomendas com antecedência. Entrega a combinar via WhatsApp.</p>
+                        </div>
+
+                        <!-- Botão Principal de Envio para WhatsApp -->
+                        <button id="sendWhatsappBtn" class="w-full py-4 px-6 rounded-2xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-base shadow-lg shadow-emerald-600/30 hover:shadow-emerald-600/50 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-3">
+                            <i class="fa-brands fa-whatsapp text-2xl"></i>
+                            <span>Fazer Pedido no WhatsApp</span>
+                        </button>
+
+                        <div class="mt-4 text-center">
+                            <a href="https://wa.me/554384344114" target="_blank" class="text-xs text-slate-500 hover:text-emerald-600 underline">
+                                WhatsApp direto: +55 43 8434-4114
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="tabela" class="py-16 px-4 bg-white/40 dark:bg-slate-900/30">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-10">
+                <span class="text-xs font-bold uppercase tracking-widest text-brand-600 dark:text-brand-400">Valores Transparentes</span>
+                <h2 class="font-serif text-3xl font-bold mt-1">Tabela Oficial por Quantidade de Rosas</h2>
+            </div>
+
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                <!-- Tabela Renderizada Dinamicamente -->
+                <div class="glass p-4 rounded-2xl text-center border border-slate-200/60 dark:border-slate-800 hover:border-brand-500/50 transition-all">
+                    <span class="block text-2xl font-serif font-bold text-slate-700 dark:text-slate-200">1 Rosa</span>
+                    <span class="text-xs text-slate-500 uppercase font-semibold">Individual</span>
+                    <div class="mt-2 text-xl font-black text-brand-600 dark:text-brand-400">R$ 15,00</div>
+                </div>
+
+                <div class="glass p-4 rounded-2xl text-center border border-slate-200/60 dark:border-slate-800 hover:border-brand-500/50 transition-all">
+                    <span class="block text-2xl font-serif font-bold text-slate-700 dark:text-slate-200">3 Rosas</span>
+                    <span class="text-xs text-slate-500 uppercase font-semibold">Trio Especial</span>
+                    <div class="mt-2 text-xl font-black text-brand-600 dark:text-brand-400">R$ 35,00</div>
+                </div>
+
+                <div class="glass p-4 rounded-2xl text-center border border-slate-200/60 dark:border-slate-800 hover:border-brand-500/50 transition-all">
+                    <span class="block text-2xl font-serif font-bold text-slate-700 dark:text-slate-200">6 Rosas</span>
+                    <span class="text-xs text-slate-500 uppercase font-semibold">Meia Dúzia</span>
+                    <div class="mt-2 text-xl font-black text-brand-600 dark:text-brand-400">R$ 60,00</div>
+                </div>
+
+                <div class="glass p-4 rounded-2xl text-center border border-slate-200/60 dark:border-slate-800 hover:border-brand-500/50 transition-all">
+                    <span class="block text-2xl font-serif font-bold text-slate-700 dark:text-slate-200">9 Rosas</span>
+                    <span class="text-xs text-slate-500 uppercase font-semibold">Encanto</span>
+                    <div class="mt-2 text-xl font-black text-brand-600 dark:text-brand-400">R$ 90,00</div>
+                </div>
+
+                <div class="glass p-4 rounded-2xl text-center border border-slate-200/60 dark:border-slate-800 border-brand-500/40 relative overflow-hidden shadow-md">
+                    <div class="absolute top-0 right-0 bg-brand-500 text-white text-[9px] font-bold px-2 py-0.5 rounded-bl-lg">MAIS PEDIDO</div>
+                    <span class="block text-2xl font-serif font-bold text-slate-700 dark:text-slate-200">12 Rosas</span>
+                    <span class="text-xs text-slate-500 uppercase font-semibold">Dúzia Clássica</span>
+                    <div class="mt-2 text-xl font-black text-brand-600 dark:text-brand-400">R$ 120,00</div>
+                </div>
+
+                <div class="glass p-4 rounded-2xl text-center border border-slate-200/60 dark:border-slate-800 hover:border-brand-500/50 transition-all">
+                    <span class="block text-2xl font-serif font-bold text-slate-700 dark:text-slate-200">15 Rosas</span>
+                    <span class="text-xs text-slate-500 uppercase font-semibold">Buquê Luxo</span>
+                    <div class="mt-2 text-xl font-black text-brand-600 dark:text-brand-400">R$ 150,00</div>
+                </div>
+
+                <div class="glass p-4 rounded-2xl text-center border border-slate-200/60 dark:border-slate-800 hover:border-brand-500/50 transition-all">
+                    <span class="block text-2xl font-serif font-bold text-slate-700 dark:text-slate-200">18 Rosas</span>
+                    <span class="text-xs text-slate-500 uppercase font-semibold">Buquê Premium</span>
+                    <div class="mt-2 text-xl font-black text-brand-600 dark:text-brand-400">R$ 175,00</div>
+                </div>
+
+                <div class="glass p-4 rounded-2xl text-center border border-slate-200/60 dark:border-slate-800 hover:border-brand-500/50 transition-all bg-gradient-to-br from-amber-500/5 to-brand-500/5">
+                    <span class="block text-2xl font-serif font-bold text-amber-600 dark:text-amber-400">20 Rosas</span>
+                    <span class="text-xs text-slate-500 uppercase font-semibold">Máxima Ostentação</span>
+                    <div class="mt-2 text-xl font-black text-brand-600 dark:text-brand-400">R$ 195,00</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="catalogo" class="py-16 px-4">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-widest text-brand-600 dark:text-brand-400">Modelos Populares</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold mt-1">Galeria de Inspirações Artesanais</h2>
+                </div>
+                <p class="text-sm text-slate-500 dark:text-slate-400 max-w-md">
+                    Inspirado em criações reais do ateliê. Você pode encomendar exatamente nestas combinações de cores e estilos.
+                </p>
+            </div>
+
+            <!-- Grid da Galeria -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" id="galleryGrid">
+                <!-- Javascript populará os cards com imagens geradas/SVGs estilizados e botão de pedido direto -->
+            </div>
+        </div>
+    </section>
+
+    <section id="diferenciais" class="py-16 px-4 bg-slate-900 text-white rounded-3xl max-w-6xl mx-auto my-12 relative overflow-hidden shadow-2xl">
+        <div class="absolute -right-10 -bottom-10 w-80 h-80 bg-brand-600/20 rounded-full blur-3xl"></div>
+        
+        <div class="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+            <div class="space-y-3 p-4">
+                <div class="w-12 h-12 rounded-2xl bg-brand-500/20 text-brand-400 flex items-center justify-center text-2xl mb-4 mx-auto md:mx-0">
+                    <i class="fa-solid fa-infinity"></i>
+                </div>
+                <h3 class="font-serif text-xl font-bold">Durabilidade Eterna</h3>
+                <p class="text-slate-300 text-sm leading-relaxed">Diferente de flores naturais, nossos buquês de cetim permanecem impecáveis por anos como uma linda recordação.</p>
+            </div>
+
+            <div class="space-y-3 p-4">
+                <div class="w-12 h-12 rounded-2xl bg-amber-500/20 text-amber-400 flex items-center justify-center text-2xl mb-4 mx-auto md:mx-0">
+                    <i class="fa-solid fa-hand-holding-heart"></i>
+                </div>
+                <h3 class="font-serif text-xl font-bold">100% Feito à Mão</h3>
+                <p class="text-slate-300 text-sm leading-relaxed">Cada rosa é dobrada e selada individualmente com carinho, técnica precisa e atenção máxima aos mínimos detalhes.</p>
+            </div>
+
+            <div class="space-y-3 p-4">
+                <div class="w-12 h-12 rounded-2xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-2xl mb-4 mx-auto md:mx-0">
+                    <i class="fa-solid fa-gift"></i>
+                </div>
+                <h3 class="font-serif text-xl font-bold">Personalização Total</h3>
+                <p class="text-slate-300 text-sm leading-relaxed">Adicione brilho, pérolas, pontos de LED, coroas ou bombons para criar um presente verdadeiramente inesquecível.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 px-4 border-t border-slate-200/60 dark:border-slate-800 bg-white/50 dark:bg-slate-950/50">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+            <div>
+                <a href="#" class="font-serif text-2xl font-bold bg-gradient-to-r from-brand-600 to-amber-500 bg-clip-text text-transparent">
+                    Coisas de Alma
+                </a>
+                <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Buquês de cetim artesanais & arranjos com amor.</p>
+            </div>
+
+            <!-- Botões das Redes Sociais no Rodapé -->
+            <div class="flex items-center gap-4">
+                <a href="https://www.instagram.com/coisasdealma.atelie?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-gradient-to-r from-purple-600 to-pink-600 text-white font-medium text-sm hover:opacity-90 shadow-md transition-all">
+                    <i class="fa-brands fa-instagram text-lg"></i>
+                    <span>Siga no Instagram</span>
+                </a>
+
+                <a href="https://wa.me/554384344114" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-medium text-sm shadow-md transition-all">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span>(43) 8434-4114</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="max-w-6xl mx-auto mt-8 pt-6 border-t border-slate-200/40 dark:border-slate-800/60 text-center text-xs text-slate-400">
+            &copy; 2026 Coisas de Alma Ateliê. Todos os direitos reservados.
+        </div>
+    </footer>
+
+    <!-- Botão Flutuante do WhatsApp no Canto da Tela -->
+    <a href="https://wa.me/554384344114" target="_blank" rel="noopener noreferrer" aria-label="Falar no WhatsApp" class="fixed bottom-6 right-6 z-50 w-14 h-14 bg-emerald-500 text-white rounded-full flex items-center justify-center shadow-2xl shadow-emerald-600/50 hover:bg-emerald-400 hover:scale-110 active:scale-95 transition-all group">
+        <i class="fa-brands fa-whatsapp text-3xl"></i>
+        <span class="absolute right-16 bg-slate-900 text-white text-xs font-semibold px-3 py-1.5 rounded-xl whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity shadow-lg pointer-events-none">
+            Conversar no WhatsApp
+        </span>
+    </a>
+
+    <script>
+        // Dados da Tabela de Preços Oficial
+        const PRICE_TABLE = {
+            1: 15.00,
+            3: 35.00,
+            6: 60.00,
+            9: 90.00,
+            12: 120.00,
+            15: 150.00,
+            18: 175.00,
+            20: 195.00
+        };
+
+        // Função para calcular o preço exato das rosas (interpolação simples para valores intermediários)
+        function getRosePrice(count) {
+            if (PRICE_TABLE[count]) return PRICE_TABLE[count];
+            
+            // Caso escolha um número customizado no slider (ex: 5 rosas)
+            const keys = Object.keys(PRICE_TABLE).map(Number).sort((a,b)=>a-b);
+            let lower = 1, upper = 20;
+            for(let i=0; i<keys.length; i++) {
+                if(keys[i] <= count) lower = keys[i];
+                if(keys[i] >= count) { upper = keys[i]; break; }
+            }
+            if(lower === upper) return PRICE_TABLE[lower];
+            
+            const lowerPrice = PRICE_TABLE[lower];
+            const upperPrice = PRICE_TABLE[upper];
+            const ratio = (count - lower) / (upper - lower);
+            return lowerPrice + ratio * (upperPrice - lowerPrice);
+        }
+
+        // Opções de Cores
+        const COLOR_OPTIONS = [
+            { id: 'bordo', name: 'Vermelho Bordô', hex: '#800020' },
+            { id: 'rosa', name: 'Rosa Delicado / Lilás', hex: '#E8B4B8' },
+            { id: 'verde', name: 'Verde Formatura', hex: '#0F5257' },
+            { id: 'azul', name: 'Azul Royal com Prata', hex: '#1E3A8A' },
+            { id: 'branco', name: 'Branco & Azul', hex: '#F8FAFC' },
+            { id: 'amarelo', name: 'Dourado / Amarelo', hex: '#D4AF37' },
+            { id: 'chocolate', name: 'Chocolate / Marrom', hex: '#5C3A21' }
+        ];
+
+        // Opções de Adicionais
+        const ADDONS = [
+            { id: 'glitter', name: 'Ponto de Brilho / Glitter nas Pétalas', price: 10.00 },
+            { id: 'perlas', name: 'Pérola no Centro de cada Rosa', price: 15.00 },
+            { id: 'borboletas', name: 'Borboletas Decorativas (3 un)', price: 12.00 },
+            { id: 'led', name: 'Fio de Luzes LED Embutido', price: 20.00 },
+            { id: 'bombons', name: 'Adicionar Bombons Ferrero/Sonho de Valsa', price: 25.00 }
+        ];
+
+        // Modelos para a Galeria
+        const GALLERY_ITEMS = [
+            {
+                title: 'Buquê Vermelho Bordô Clássico',
+                roses: 12,
+                color: 'Vermelho Bordô',
+                desc: 'O preferido para declarações amorosas e aniversários de namoro.',
+                bgColor: 'from-rose-900 to-red-950',
+                tag: 'Mais Vendido'
+            },
+            {
+                title: 'Verde Enfermagem / Formatura',
+                roses: 15,
+                color: 'Verde Formatura',
+                desc: 'Especialmente criado para formaturas de saúde com detalhes em dourado.',
+                bgColor: 'from-emerald-800 to-teal-950',
+                tag: 'Formatura'
+            },
+            {
+                title: 'Azul Royal & Detalhes Prata',
+                roses: 12,
+                color: 'Azul Royal',
+                desc: 'Elegância e mistério em cetim reluzente com fita de cetim prateada.',
+                bgColor: 'from-blue-900 to-slate-900',
+                tag: 'Exclusivo'
+            },
+            {
+                title: 'Lilás Encantado & Borboletas',
+                roses: 9,
+                color: 'Rosa Delicado / Lilás',
+                desc: 'Acompanha borboletas 3D douradas que transmitem leveza.',
+                bgColor: 'from-purple-900 to-pink-950',
+                tag: 'Romântico'
+            },
+            {
+                title: 'Branco Pureza & Azul',
+                roses: 18,
+                color: 'Branco & Azul',
+                desc: 'Combinação suave perfeita para presentear noivas ou aniversariantes.',
+                bgColor: 'from-slate-700 to-blue-950',
+                tag: 'Sofisticado'
+            },
+            {
+                title: 'Amarelo Dourado & Roxo',
+                roses: 12,
+                color: 'Dourado / Amarelo',
+                desc: 'Contraste vibrante que representa alegria e prosperidade.',
+                bgColor: 'from-amber-700 to-purple-950',
+                tag: 'Vibrante'
+            },
+            {
+                title: 'Buquê Doce (Chocolate + Rosas)',
+                roses: 6,
+                color: 'Chocolate / Marrom',
+                desc: 'Combinação perfeita de rosas artesanais e bombons selecionados.',
+                bgColor: 'from-amber-950 to-amber-900',
+                tag: 'Com Bombons'
+            },
+            {
+                title: 'Mini Buquê 3 Rosas Especial',
+                roses: 3,
+                color: 'Vermelho Bordô',
+                desc: 'Lembrança delicada e carinhosa para surpreender no dia a dia.',
+                bgColor: 'from-pink-900 to-rose-950',
+                tag: 'Lembrancinha'
+            }
+        ];
+
+        // Estado da Calculadora
+        let state = {
+            roses: 12,
+            selectedColor: COLOR_OPTIONS[0],
+            selectedAddons: new Set(),
+            note: ''
+        };
+
+        // DOM Elements
+        const roseRange = document.getElementById('roseRange');
+        const roseCountDisplay = document.getElementById('roseCountDisplay');
+        const presetButtons = document.getElementById('presetButtons');
+        const colorOptionsContainer = document.getElementById('colorOptions');
+        const addonsContainer = document.getElementById('addonsContainer');
+        const totalPriceDisplay = document.getElementById('totalPriceDisplay');
+        const summaryRosesLabel = document.getElementById('summaryRosesLabel');
+        const summaryRosesPrice = document.getElementById('summaryRosesPrice');
+        const summaryColor = document.getElementById('summaryColor');
+        const summaryAddonsList = document.getElementById('summaryAddonsList');
+        const customNoteInput = document.getElementById('customNote');
+        const sendWhatsappBtn = document.getElementById('sendWhatsappBtn');
+        const galleryGrid = document.getElementById('galleryGrid');
+
+        // Inicialização
+        function init() {
+            renderPresets();
+            renderColors();
+            renderAddons();
+            renderGallery();
+            updateCalculator();
+
+            // Event Listeners
+            roseRange.addEventListener('input', (e) => {
+                state.roses = parseInt(e.target.value);
+                updateCalculator();
+            });
+
+            customNoteInput.addEventListener('input', (e) => {
+                state.note = e.target.value;
+            });
+
+            sendWhatsappBtn.addEventListener('click', sendOrderToWhatsapp);
+
+            // Alternar Modo Claro/Escuro
+            document.getElementById('themeToggle').addEventListener('click', () => {
+                document.documentElement.classList.toggle('dark');
+            });
+        }
+
+        // Renderizar Botões de Quantidade Predefinidos
+        function renderPresets() {
+            const presets = [1, 3, 6, 9, 12, 15, 18, 20];
+            presetButtons.innerHTML = presets.map(count => `
+                <button type="button" onclick="setPresetRoses(${count})" class="preset-btn px-2 py-2 rounded-xl text-xs font-bold transition-all border ${state.roses === count ? 'bg-brand-600 text-white border-brand-600 shadow-md' : 'bg-slate-100 dark:bg-slate-800/80 text-slate-700 dark:text-slate-300 border-slate-200 dark:border-slate-700 hover:border-brand-400'}">
+                    ${count} ${count === 1 ? 'Rosa' : 'Rosas'}
+                </button>
+            `).join('');
+        }
+
+        function setPresetRoses(count) {
+            state.roses = count;
+            roseRange.value = count;
+            renderPresets();
+            updateCalculator();
+        }
+
+        // Renderizar Seleção de Cores
+        function renderColors() {
+            colorOptionsContainer.innerHTML = COLOR_OPTIONS.map(c => `
+                <button type="button" onclick="selectColor('${c.id}')" class="flex items-center gap-2 p-2.5 rounded-xl border text-xs font-semibold text-left transition-all ${state.selectedColor.id === c.id ? 'border-brand-500 bg-brand-50 dark:bg-brand-950/40 text-brand-700 dark:text-brand-300 ring-2 ring-brand-500/30' : 'border-slate-200 dark:border-slate-800 hover:border-slate-300'}">
+                    <span class="w-4 h-4 rounded-full shadow-inner flex-shrink-0" style="background-color: ${c.hex}"></span>
+                    <span class="truncate">${c.name}</span>
+                </button>
+            `).join('');
+        }
+
+        function selectColor(colorId) {
+            state.selectedColor = COLOR_OPTIONS.find(c => c.id === colorId);
+            renderColors();
+            updateCalculator();
+        }
+
+        // Renderizar Checkboxes de Adicionais
+        function renderAddons() {
+            addonsContainer.innerHTML = ADDONS.map(addon => {
+                const isChecked = state.selectedAddons.has(addon.id);
+                return `
+                    <label class="flex items-center justify-between p-3 rounded-xl border transition-all cursor-pointer ${isChecked ? 'border-brand-500 bg-brand-50/50 dark:bg-brand-950/30' : 'border-slate-200 dark:border-slate-800/80 hover:bg-slate-50 dark:hover:bg-slate-800/40'}">
+                        <div class="flex items-center gap-3">
+                            <input type="checkbox" onchange="toggleAddon('${addon.id}')" ${isChecked ? 'checked' : ''} class="w-4 h-4 accent-brand-600 rounded">
+                            <span class="text-xs font-medium">${addon.name}</span>
+                        </div>
+                        <span class="text-xs font-bold text-brand-600 dark:text-brand-400">+R$ ${addon.price.toFixed(2)}</span>
+                    </label>
+                `;
+            }).join('');
+        }
+
+        function toggleAddon(addonId) {
+            if (state.selectedAddons.has(addonId)) {
+                state.selectedAddons.delete(addonId);
+            } else {
+                state.selectedAddons.add(addonId);
+            }
+            renderAddons();
+            updateCalculator();
+        }
+
+        // Atualizar Cálculos do Resumo
+        function updateCalculator() {
+            const rosePrice = getRosePrice(state.roses);
+            
+            let addonsTotal = 0;
+            const selectedAddonsList = [];
+            
+            state.selectedAddons.forEach(id => {
+                const item = ADDONS.find(a => a.id === id);
+                if (item) {
+                    addonsTotal += item.price;
+                    selectedAddonsList.push(item);
+                }
+            });
+
+            const grandTotal = rosePrice + addonsTotal;
+
+            // Atualizar Telas
+            roseCountDisplay.textContent = `${state.roses} ${state.roses === 1 ? 'Rosa' : 'Rosas'}`;
+            summaryRosesLabel.textContent = `${state.roses} ${state.roses === 1 ? 'Rosa de Cetim' : 'Rosas de Cetim'}`;
+            summaryRosesPrice.textContent = `R$ ${rosePrice.toFixed(2).replace('.', ',')}`;
+            summaryColor.textContent = state.selectedColor.name;
+
+            // Lista de Adicionais
+            if (selectedAddonsList.length > 0) {
+                summaryAddonsList.innerHTML = selectedAddonsList.map(item => `
+                    <div class="flex justify-between text-slate-500">
+                        <span>+ ${item.name}</span>
+                        <span>R$ ${item.price.toFixed(2).replace('.', ',')}</span>
+                    </div>
+                `).join('');
+            } else {
+                summaryAddonsList.innerHTML = `<span class="text-slate-400 italic">Nenhum adicional selecionado</span>`;
+            }
+
+            totalPriceDisplay.textContent = `R$ ${grandTotal.toFixed(2).replace('.', ',')}`;
+            renderPresets();
+        }
+
+        // Enviar Pedido Pré-formatado para o WhatsApp
+        function sendOrderToWhatsapp() {
+            const rosePrice = getRosePrice(state.roses);
+            let addonsTotal = 0;
+            const addonsTextList = [];
+
+            state.selectedAddons.forEach(id => {
+                const item = ADDONS.find(a => a.id === id);
+                if (item) {
+                    addonsTotal += item.price;
+                    addonsTextList.push(`• ${item.name} (+R$ ${item.price.toFixed(2)})`);
+                }
+            });
+
+            const grandTotal = rosePrice + addonsTotal;
+
+            let message = `*Olá, Coisas de Alma! Gostaria de fazer uma encomenda:* 🌹\n\n`;
+            message += `*Item:* Buquê de Cetim Personalizado\n`;
+            message += `*Quantidade:* ${state.roses} ${state.roses === 1 ? 'Rosa' : 'Rosas'}\n`;
+            message += `*Cor Selecionada:* ${state.selectedColor.name}\n`;
+            
+            if (addonsTextList.length > 0) {
+                message += `*Adicionais:*\n${addonsTextList.join('\n')}\n`;
+            } else {
+                message += `*Adicionais:* Nenhum\n`;
+            }
+
+            if (state.note.trim() !== '') {
+                message += `*Observação / Cartão:* ${state.note.trim()}\n`;
+            }
+
+            message += `\n*Valor Total Estimado:* R$ ${grandTotal.toFixed(2).replace('.', ',')}\n\n`;
+            message += `Como posso prosseguir com o pagamento e entrega?`;
+
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappUrl = `https://wa.me/554384344114?text=${encodedMessage}`;
+            
+            window.open(whatsappUrl, '_blank');
+        }
+
+        // Encomenda rápida a partir de um card da galeria
+        function orderFromGallery(title, roses, colorName) {
+            state.roses = roses;
+            roseRange.value = roses;
+            const foundColor = COLOR_OPTIONS.find(c => c.name.toLowerCase().includes(colorName.toLowerCase())) || COLOR_OPTIONS[0];
+            state.selectedColor = foundColor;
+            
+            updateCalculator();
+            renderColors();
+
+            // Smooth Scroll até a calculadora
+            document.getElementById('calculadora').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Renderizar Galeria de Fotos/Arranjos
+        function renderGallery() {
+            galleryGrid.innerHTML = GALLERY_ITEMS.map(item => `
+                <div class="glass rounded-3xl overflow-hidden shadow-lg border border-slate-200/50 dark:border-slate-800 flex flex-col justify-between group hover:-translate-y-1 transition-all">
+                    <div>
+                        <!-- Mockup da Foto do Buquê com SVG decorativo de rosa -->
+                        <div class="h-48 bg-gradient-to-br ${item.bgColor} p-6 relative flex flex-col justify-between overflow-hidden">
+                            <span class="self-start px-3 py-1 rounded-full bg-white/20 backdrop-blur-md text-white text-[10px] font-bold uppercase tracking-wider">
+                                ${item.tag}
+                            </span>
+                            <div class="text-right">
+                                <i class="fa-solid fa-rose text-white/20 text-8xl absolute -bottom-4 -right-4 group-hover:scale-110 transition-transform"></i>
+                                <span class="text-3xl font-black text-white drop-shadow-md block">${item.roses} Rosas</span>
+                            </div>
+                        </div>
+
+                        <div class="p-5">
+                            <h3 class="font-serif font-bold text-lg mb-1 group-hover:text-brand-600 transition-colors">${item.title}</h3>
+                            <p class="text-xs text-slate-500 dark:text-slate-400 mb-4 leading-relaxed">${item.desc}</p>
+                        </div>
+                    </div>
+
+                    <div class="px-5 pb-5 pt-0">
+                        <button onclick="orderFromGallery('${item.title}', ${item.roses}, '${item.color}')" class="w-full py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-brand-600 hover:text-white dark:hover:bg-brand-600 text-xs font-bold transition-all flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-sliders"></i>
+                            <span>Personalizar Este</span>
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Iniciar ao carregar página
+        window.addEventListener('DOMContentLoaded', init);
+    </script>
+</body>
+</html>
